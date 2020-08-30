@@ -4,9 +4,9 @@ services:
   ember:
     image: danlynn/ember-cli:latest
     volumes:
-      - .:/myapp
+      - .:/myapp:delegated
       - .bash_history:/root/.bash_history
-      - node_modules:/myapp/node_modules
+      - node_modules:/myapp/node_modules:delegated
     tmpfs:
       - /myapp/tmp
     ports:
