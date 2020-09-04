@@ -9,4 +9,8 @@ export default class LoginRoute extends Route {
     		this.transitionTo('dashboard');
     	}
   	}
+
+	activate() {
+		document.title = "SPN - Login";
+	}
 }

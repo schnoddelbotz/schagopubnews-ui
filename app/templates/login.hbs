@@ -1,27 +1,32 @@
-<div class="XXXXFIXMEXXXXmodal" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="false">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">welcome to spn</h5>
-      </div>
+<div class="container-fluid h-100">
+	<div class="row align-items-center justify-content-md-center h-100">
+	<div class="col-sm-3">
       {{#if session.isAuthenticated}}
       	You are signed in. Enjoy!
       {{else}}
-		  <form {{action 'authenticate' on='submit'}}>
-		      <div class="modal-body">
-					{{input value=identification placeholder='username' class='form-control'}}
-					{{input value=password placeholder='password' class='form-control' type='password'}}
+		  <form id="loginForm" {{action 'authenticate' on='submit'}}>
+		      	<div class="form-group">
+		      		<label class="w-100">
+						username
+						<Input @value={{identification}} placeholder='enter your username' class='form-control' />
+					</label>
+				</div>
+				<div class="form-group">
+					<label class="w-100">
+						password
+						<Input @value={{password}} placeholder='enter your password' class='form-control' type='password' />
+					</label>
+				</div>
 				{{#if errorMessage}}
 					<p><strong>Error: <code>{{errorMessage}}</code></strong></p>
 				{{/if}}
-		      </div>
-		      <div class="modal-footer">
-		        <button type="submit" class="btn btn-primary">Login</button>
-		      </div>
+		      	<div class="form-group justify-content-end">
+		        	<button type="submit" class="btn btn-primary">Login</button>
+		      	</div>
 	      </form>
       {{/if}}
-    </div>
-  </div>
+	</div>
+	</div>
 </div>
 
 {{outlet}}

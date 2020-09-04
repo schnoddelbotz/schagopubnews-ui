@@ -10,4 +10,8 @@ export default class DashboardRoute extends Route {
 		this.session.requireAuthentication(transition, 'login');
 	}
 
+	activate() {
+		document.title = "SPN - Dashboard";
+	}
+
 }
