@@ -28,5 +28,6 @@ module.exports = function(app) {
   //
   //app.use('/api/token', require('body-parser').json());
   //app.use('/api/token', tokenRouter);
-  app.use('/token', require('body-parser').urlencoded(), tokenRouter);
+  const bodyParser  = require('body-parser');
+  app.use('/token', bodyParser.urlencoded({ extended: true }), tokenRouter);
 };
