@@ -47,6 +47,7 @@ push: image
 
 clean:
 	-docker-compose down --remove-orphans
+	rm -f app/index.html
 	docker run --rm -v`pwd`:/mnt busybox /bin/sh -c \
 		"cd /mnt && rm -rf dist yarn-error.log"
 
