@@ -12,7 +12,35 @@ module.exports = function(defaults) {
       includePaths: [
         'vendor/sb-admin-2/scss',
       ]
-    }
+    },
+    gzip: {
+      enabled: true,
+      keepUncompressed: true,
+    },
+    emberCliConcat: {
+      // https://github.com/sir-dunxalot/ember-cli-concat/wiki/Options
+      enabled: true,
+      outputDir: 'assets',
+      outputFileName: 'app',
+      useSelfClosingTags: false,
+      wrapScriptsInFunction: false,
+      treeTypes: ['all'],
+      js: {
+        concat: true,
+        contentFor: 'concat-js',
+        footer: null,
+        header: null,
+        preserveOriginal: true,
+      },
+      css: {
+        concat: true,
+        contentFor: 'concat-css',
+        footer: null,
+        header: null,
+        preserveOriginal: true,
+      },
+    },
+
   });
 
   // Use `app.import` to add additional libraries to the generated
