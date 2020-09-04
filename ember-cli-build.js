@@ -13,6 +13,8 @@ module.exports = function(defaults) {
         'vendor/sb-admin-2/scss',
       ]
     },
+
+    /* FOR PROD *
     gzip: {
       enabled: true,
       keepUncompressed: true,
@@ -40,6 +42,7 @@ module.exports = function(defaults) {
         preserveOriginal: true,
       },
     },
+    */
 
   });
 

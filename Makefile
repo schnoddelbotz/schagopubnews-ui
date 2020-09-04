@@ -49,4 +49,4 @@ clean:
 
 realclean: clean
 	rm -f yarn-install
-	-docker volume rm schagopubnews-ui_node_modules
+	-docker-compose down -v --rmi all
