@@ -2,24 +2,32 @@
 
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
+var ENV_CONFIG = require('./config/environment')(EmberApp.env());
+var environment = ENV_CONFIG['environment'] || 'development';
+console.log(`ember-cli-build.js: Building for env: ${environment}`);
+
 module.exports = function(defaults) {
-  let app = new EmberApp(defaults, {
+
+  var config = {
     'ember-bootstrap': {
       bootstrapVersion: 4,
       importBootstrapCSS: false
     },
-    sassOptions: {
+    'sassOptions': {
       includePaths: [
         'vendor/sb-admin-2/scss',
       ]
     },
-
-    /* FOR PROD *
-    gzip: {
-      enabled: true,
-      keepUncompressed: true,
+    'gzip': {
+      enabled: false,
     },
-    emberCliConcat: {
+    'emberCliConcat': {
+      enabled: false,
+    },
+    'fingerprint': {
+      enabled: false
+    },
+    'emberCliConcat': {
       // https://github.com/sir-dunxalot/ember-cli-concat/wiki/Options
       enabled: true,
       outputDir: 'assets',
@@ -28,23 +36,36 @@ module.exports = function(defaults) {
       wrapScriptsInFunction: false,
       treeTypes: ['all'],
       js: {
+        concat: false,
+      },
+      css: {
+        concat: false,
+      },
+    }
+  };
+
+  if (environment != 'development') {
+    config['gzip'] = { enabled: true, keepUncompressed: true };
+    config['fingerprint'] = { enabled: true, extensions: ['js','css'] };
+    config['emberCliConcat']['js'] = {
         concat: true,
         contentFor: 'concat-js',
         footer: null,
         header: null,
-        preserveOriginal: true,
-      },
-      css: {
+        preserveOriginal: false,
+    };
+    config['emberCliConcat']['css'] = {
         concat: true,
         contentFor: 'concat-css',
         footer: null,
         header: null,
-        preserveOriginal: true,
-      },
-    },
-    */
+        preserveOriginal: false,
+    };
+  };
 
-  });
+
+  let app = new EmberApp(defaults, config);
+
 
   // Use `app.import` to add additional libraries to the generated
   // output files.

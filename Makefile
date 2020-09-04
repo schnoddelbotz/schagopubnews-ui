@@ -19,9 +19,11 @@ yarn-upgrade:
 	docker-compose run --rm ember yarn upgrade
 
 serve: yarn-install
+	grep -v PROD-only app/index_dev+prod.html > app/index.html
 	docker-compose up
 
 test: yarn-install
+	grep -v PROD-only app/index_dev+prod.html > app/index.html
 	docker-compose run --rm ember ember test
 	docker-compose run --rm ember yarn lint:hbs
 
@@ -29,7 +31,8 @@ bash:
 	docker-compose run --rm ember bash
 
 dist: yarn-install
-	docker-compose run --rm ember ember build --env production
+	grep -v dev-only app/index_dev+prod.html > app/index.html
+	docker-compose run -e --rm ember ember build --env production
 
 image: dist
 	docker build -t $(PROJECT_NAME):$(IMAGE_TAG) -f ./ops/build/smudo.Dockerfile .

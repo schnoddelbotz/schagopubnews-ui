@@ -24,3 +24,6 @@
 /bower.json.ember-try
 /package.json.ember-try
 /yarn-install
+.DS_Store
+# index.html is generated each time from app/index_dev+prod.html for each build/serve...
+/app/index.html
