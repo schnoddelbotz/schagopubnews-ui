@@ -41,3 +41,12 @@ Serverless Cms, Headleass Application, (written in) GO, (to) PUBlish news!
 ./ember g authenticator oauth2
 ./ember g http-mock token
 ```
+
+# taglines
+
+- SPN. Simply produce news.
+- SPN. Share personal notes.
+- x4E. Experience for Enterprises.
+- x4E. Exceptional for Everything.
+- x4E. Experts for Efficency.
+- x4E. The definition of cloud-native.
