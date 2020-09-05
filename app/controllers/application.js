@@ -1,9 +1,9 @@
 import Controller from '@ember/controller';
-import { inject as service } from '@ember/service';
-import { action } from '@ember/object';
+import {inject as service } from '@ember/service';
+import {action } from '@ember/object';
 
 export default class ApplicationController extends Controller {
-	@service session;
+    @service session;
 
     sidebarEnabled = true;
 
@@ -13,7 +13,7 @@ export default class ApplicationController extends Controller {
     }
 
     @action
-  	toggleSidebar() {
+    toggleSidebar() {
 
         // https://medium.com/dailyjs/mimicking-bootstraps-collapse-with-vanilla-javascript-b3bb389040e7
         // map our commands to the classList methods
@@ -30,22 +30,22 @@ export default class ApplicationController extends Controller {
         //   });
         // }
 
-    	// from: js/sb-admin-2.js
-    	// $("body").toggleClass("sidebar-toggled");
-    	// $(".sidebar").toggleClass("toggled");
-    	// if ($(".sidebar").hasClass("toggled")) {
-    	//   $('.sidebar .collapse').collapse('hide');
-    	// };
+        // from: js/sb-admin-2.js
+        // $("body").toggleClass("sidebar-toggled");
+        // $(".sidebar").toggleClass("toggled");
+        // if ($(".sidebar").hasClass("toggled")) {
+        //   $('.sidebar .collapse').collapse('hide');
+        // };
         // toggle
         document.getElementById('accordionSidebar').classList.toggle("toggled");
         //this.sidebarEnabled = !this.sidebarEnabled;
         //if (this.sidebarEnabled) {
-            // console.log(`TOGGLE SIDEBAR OFF`);
-            // collapse('.sidebar .collapse', 'hide');
+        // console.log(`TOGGLE SIDEBAR OFF`);
+        // collapse('.sidebar .collapse', 'hide');
         //}// else {
         //     console.log(`TOGGLE SIDEBAR On`);
         // }
 
 
-  	}
+    }
 }

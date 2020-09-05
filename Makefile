@@ -30,8 +30,8 @@ test: yarn-install
 bash:
 	docker-compose run --rm ember bash
 
-dist: yarn-install
-	grep -v dev-only app/index_dev+prod.html > app/index.html
+dist: clean yarn-install
+	grep -v dev-only app/index_dev+prod.html | sed -e 's@<!-- PROD-only -->@@' > app/index.html
 	docker-compose run -e --rm ember ember build --env production
 
 image: dist
