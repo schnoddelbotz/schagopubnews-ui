@@ -10,13 +10,15 @@ Serverless Cms, Headleass Application, (written in) GO, (to) PUBlish news!
 # todo?
 
 - use CFN for initial auth, but then do all DB traffic directly against FireStore!
--
+- read https://guides.emberjs.com/release/upgrading/current-edition/glimmer-components/
+
 
 # done (, ... but)
 
 - includes https://fontawesome.com/icons?d=gallery&s=regular,solid&m=free via https://github.com/FortAwesome/ember-fontawesome
 - includes login via http://ember-simple-auth.com/
-- includes https://startbootstrap.com/themes/sb-admin-2/ but not really working yet, as it includes jquery which I want to avoid missing parts mostly in https://github.com/StartBootstrap/startbootstrap-sb-admin-2/blob/master/js/sb-admin-2.js
+- includes https://startbootstrap.com/themes/sb-admin-2/ but not really working yet, as it includes jquery which I want to avoid missing parts mostly in https://github.com/StartBootstrap/startbootstrap-sb-admin-2/blob/master/js/sb-admin-2.js ---> use https://www.ember-bootstrap.com/api/classes/Components.Collapse.html ?
+
 
 ## issues
 
