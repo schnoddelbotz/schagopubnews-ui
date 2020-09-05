@@ -125,7 +125,7 @@
                     <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
                     <div class="input-group-append">
                       <button class="btn btn-primary" type="button">
-                      <i class="fas fa-search fa-sm"></i>
+                      <FaIcon @icon="search" class="fa-sm" />
                       </button>
                     </div>
                   </div>
@@ -154,7 +154,7 @@
                   <!-- Nav Item - Alerts -->
                   <li class="nav-item dropdown no-arrow mx-1">
                     <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <i class="fas fa-bell fa-fw"></i>
+                      <FaIcon @icon="bell" class="fa-fw" />
                       <!-- Counter - Alerts -->
                       <span class="badge badge-danger badge-counter">3+</span>
                     </a>
@@ -188,7 +188,7 @@
                       <a class="dropdown-item d-flex align-items-center" href="#">
                         <div class="mr-3">
                           <div class="icon-circle bg-warning">
-                            <i class="fas fa-exclamation-triangle text-white"></i>
+                            <FaIcon @icon="exclamation-triangle" class="text-red" />
                           </div>
                         </div>
                         <div>
@@ -202,7 +202,7 @@
                   <!-- Nav Item - Messages -->
                   <li class="nav-item dropdown no-arrow mx-1">
                     <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <i class="fas fa-envelope fa-fw"></i>
+                      <FaIcon @icon="envelope" class="fa-fw" />
                       <!-- Counter - Messages -->
                       <span class="badge badge-danger badge-counter">7</span>
                     </a>
@@ -258,10 +258,8 @@
                   <!-- Nav Item - User Information -->
                   <li class="nav-item dropdown no-arrow">
                     <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <span class="mr-2 d-none d-lg-inline text-gray-600 small">
-                        <span {{action 'logout'}}>J. Hacker</span>
-                        <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
-                      </span>
+                      <span class="mr-2 d-none d-lg-inline text-gray-600 small" {{action 'logout'}}>J. Hacker</span>
+                      <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
                     </a>
                     <!-- Dropdown - User Information -->
                     <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -288,7 +286,7 @@
               </nav>
               {{else}}
               <div class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-                <h1 class="navbar-brand"><span class="gray">x4E</span> SPN</h1>
+                <h1 class="navbar-brand"><span class="text-gray-500">x4E</span> SPN</h1>
               </div>
               {{/if}}
               <!-- End of Topbar -->
