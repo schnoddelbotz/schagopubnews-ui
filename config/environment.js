@@ -4,7 +4,7 @@ module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'myapp',
     environment,
-    rootURL: '/spn',
+    rootURL: '/SPN/',
     locationType: 'hash',
     EmberENV: {
       FEATURES: {
