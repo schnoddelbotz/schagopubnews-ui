@@ -10,4 +10,5 @@ export default class ApplicationRoute extends Route /*.extend(ApplicationRouteMi
 		// redirect to /#/login if no API token set yet
 		this.session.requireAuthentication(transition, 'login');
 	}
+
 }
