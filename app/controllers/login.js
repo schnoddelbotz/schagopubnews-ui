@@ -13,8 +13,8 @@ export default class LoginController extends Controller {
         	if ("responseJSON" in reason && "error" in reason.responseJSON) {
         		this.set('errorMessage', reason.responseJSON.error);
         	} else {
-        		this.set('errorMessage', reason);
-        		cosole.log(reason);
+        		this.set('errorMessage', `HTTP ${reason.status}`);
+        		console.log(reason);
         	}
         });
         this.transitionToRoute('dashboard');
