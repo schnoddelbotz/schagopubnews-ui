@@ -10,7 +10,7 @@ module.exports = function(app) {
       if (req.body.username === 'letme' && req.body.password === 'in') {
         res.status(200).send('{"access_token": "secret token"}');
       } else {
-        res.status(401).send('{"error": "invalid grant"}');
+        res.status(401).send('{"error": "invalid credentials"}');
       }
     } else {
       res.status(400).send('{"error": "unsupported grant_type"}');

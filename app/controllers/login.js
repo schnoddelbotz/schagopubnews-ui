@@ -9,14 +9,12 @@ export default class LoginController extends Controller {
     authenticate() {
         let {identification, password } = this.getProperties('identification', 'password');
         this.session.authenticate('authenticator:oauth2', identification, password).catch((reason) => {
-            // fixme: ensure error in reson ... catch other/net errors
-            if ("responseJSON" in reason && "error" in reason.responseJSON) {
+            if (reason.responseJSON && "error" in reason.responseJSON) {
                 this.set('errorMessage', reason.responseJSON.error);
             } else {
-                this.set('errorMessage', `HTTP ${reason.status}`);
-                console.log(reason);
+                this.set('errorMessage', reason);
             }
         });
-        this.transitionToRoute('dashboard');
+        this.transitionToRoute('dashboard'); // ??? still? runs? when?
     }
 }

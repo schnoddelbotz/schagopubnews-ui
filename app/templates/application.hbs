@@ -94,15 +94,13 @@
           </li>
           <hr class="sidebar-divider">
           <li class="nav-item">
-            <a class="nav-link" href="tables.html">
-              <i class="fas fa-fw fa-table"></i>
-              <span>About SPN</span></a>
-            </li>
-            <!-- Divider -->
+            <a class="nav-link" href="tables.html"> <span>About SPN</span></a>
+          </li>
+          <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
-              <FaIcon @icon="arrow-alt-circle-left" @prefix="far" class="rounded-circle border-0 fa-xs" id="sidebarToggle" {{on "click" this.toggleSidebar}} />
+              <FaIcon @icon="sort-up" @rotation={{270}} class="rounded-circle border-0" id="sidebarToggle" {{on "click" this.toggleSidebar}} />
               {{!-- <button class="rounded-circle border-0" id="sidebarToggle"></button> --}}
             </div>
           </ul>
@@ -299,7 +297,7 @@
             <footer class="sticky-footer bg-white">
               <div class="container my-auto">
                 <div class="copyright text-center my-auto">
-                  <span>Copyright &copy; x4E est'd. MMXX</span>
+                  <span>Copyright &copy; <a href="http://x4E.io/">x4E</a> est'd. MMXX</span>
                 </div>
               </div>
             </footer>

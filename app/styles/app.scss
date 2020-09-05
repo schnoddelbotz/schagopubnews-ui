@@ -1,15 +1,14 @@
 
+@import "variables.scss";
+
 @import "ember-bootstrap/bootstrap";
+
 @import "sb-admin-2.scss";
+
 
 html, body { height: 100%; }
 #loginForm {
 	background:#eee;
 	padding:30px;
 }
-#sidebarToggle {
-	opacity: 20%;
-}
-#sidebarToggle:hover {
-	opacity: 60%;
-}
+
