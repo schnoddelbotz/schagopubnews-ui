@@ -46,7 +46,9 @@ Serverless Cms, Headleass Application, (written in) GO, (to) PUBlish news!
 
 - SPN. Simply produce news.
 - SPN. Share personal notes.
+- SPN. Inherently cloud-native.
 - x4E. Experience for Enterprises.
 - x4E. Exceptional for Everything.
 - x4E. Experts for Efficency.
+- x4E. Example for engineering excellence.
 - x4E. The definition of cloud-native.

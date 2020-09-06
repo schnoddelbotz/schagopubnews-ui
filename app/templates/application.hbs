@@ -30,7 +30,7 @@
           {{!-- <i class="fas fa-fw fa-cog"></i> --}}
           <span>Articles</span>
         </a>
-        <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div id="collapseTwo" class="collapse"  aria-labelledby="headingTwo" data-parent="#accordionSidebar"> <!-- class="collapse show" ==> unhides! -->
           <div class="bg-white py-2 collapse-inner rounded">
             {{!-- <h6 class="collapse-header">Custom Components:</h6> --}}
             <a class="collapse-item" href="buttons.html">To-Do</a>
@@ -82,19 +82,16 @@
       </li>
       <!-- Nav Item - Charts -->
       <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Users</span></a>
+        {{#link-to 'users' class="nav-link"}} <span>Users</span>{{/link-to}}
         </li>
         <!-- Nav Item - Tables -->
         <li class="nav-item">
           <a class="nav-link" href="tables.html">
-            <i class="fas fa-fw fa-table"></i>
             <span>Products and editions</span></a>
           </li>
           <hr class="sidebar-divider">
           <li class="nav-item">
-            <a class="nav-link" href="tables.html"> <span>About SPN</span></a>
+            {{#link-to 'about' class="nav-link"}} <span>About SPN</span>{{/link-to}}
           </li>
           <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
@@ -115,7 +112,8 @@
               <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
                 <!-- Sidebar Toggle (Topbar) -->
                 <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                <i class="fa fa-bars"></i>
+                {{!-- <i class="fa fa-bars"></i> --}}
+                <FaIcon @icon="bars" />
                 </button>
                 <!-- Topbar Search -->
                 <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
@@ -308,5 +306,6 @@
         <!-- End of Page Wrapper -->
         <!-- Scroll to Top Button-->
         <a class="scroll-to-top rounded" href="#page-top">
-          <i class="fas fa-angle-up"></i>
+          {{!-- <i class="fas fa-angle-up"></i> --}}
+          <FaIcon @icon="angle-up" />
         </a>
