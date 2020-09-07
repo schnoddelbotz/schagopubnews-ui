@@ -5,10 +5,8 @@
   <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
     <!-- Sidebar - Brand -->
     {{#link-to 'index' class="sidebar-brand d-flex align-items-center justify-content-center"}}
-    <div class="sidebar-brand-icon rotate-n-15">
-      <FaIcon @icon="laugh-wink" />
-    </div>
-    <div class="sidebar-brand-text mx-3">SPN <sup>0.1.2</sup></div>
+    {{!-- <div class="sidebar-brand-icon rotate-n-15"></div> --}}
+    <div class="sidebar-brand-text mx-3"><span class="x4ex">x</span><span class="gray">4E</span> &nbsp; SPN{{!--  <sup>r2020.4</sup> --}}</div>
     {{/link-to}}
     <!-- Divider -->
     <hr class="sidebar-divider my-0">
@@ -282,7 +280,7 @@
               </nav>
               {{else}}
               <div class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-                <h1 class="navbar-brand"><span class="text-gray-500">x4E</span> SPN</h1>
+                <h1 class="navbar-brand"><span class="text-gray-500"><span class="x4ex">x</span>4E</span> SPN</h1>
               </div>
               {{/if}}
               <!-- End of Topbar -->
@@ -295,7 +293,7 @@
             <footer class="sticky-footer bg-white">
               <div class="container my-auto">
                 <div class="copyright text-center my-auto">
-                  <span>Copyright &copy; <a href="https://www.x4e.ch/spn/" target="_blank" rel="noopener noreferrer">x4E</a> est'd. MMXX</span>
+                  <span>Copyright &copy; <a href="https://www.x4e.ch/spn/" target="_blank" rel="noopener noreferrer"><span class="x4ex">x</span><span class="black">4E</span></a> MMXX</span>
                 </div>
               </div>
             </footer>

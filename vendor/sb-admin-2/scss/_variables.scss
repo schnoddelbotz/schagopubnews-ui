@@ -16,11 +16,13 @@ $gray-800: #5a5c69 !default;
 $gray-900: #3a3b45 !default;
 $black: #000 !default;
 
-$blue: #4e73df !default;
+// NOTE THIS $BLUE IS ACTUALLY USED FOR "ALL THE BACKGROUND THINGS".
+$blue: #333 !default; // $blue: #4e73df !default;
+
 $indigo: #6610f2 !default;
 $purple: #6f42c1 !default;
 $pink: #e83e8c !default;
-$red: #e74a3b !default;
+$red: rgb(127,19,19) !default; // a11  // $red: #e74a3b !default;
 $orange: #fd7e14 !default;
 $yellow: #f6c23e !default;
 $green: #1cc88a !default;
