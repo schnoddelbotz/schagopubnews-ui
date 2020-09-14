@@ -1,5 +1,15 @@
 <div class="container-fluid">
 	<h1 class="h3 mb-4 text-gray-800">About SPN</h1>
-	SPN is the leading headless CMS in the 21st century, at least it might be.
+	<p>SPN is the leading headless CMS in the 21st century, at least it might be.</p>
+	<TuiEditor
+	  @height="auto"
+	  @minHeight="300px"
+	  @previewStyle={{this.previewStyle}}
+	  @editType={{this.editType}}
+	  @toolbarItems={{this.toolbarItems}}
+	  @value={{this.value}}
+	  @onChange={{fn (mut this.value)}}/>
+
 </div>
+
 {{outlet}}
