@@ -5,6 +5,9 @@ module.exports = function(environment) {
     modulePrefix: 'myapp',
     environment,
     rootURL: '/SPN/',
+    apiURL: '/SPN/', // by default, assume own CFn / Webserver -> one origin.
+    // app can also be served off bucket (?) ... and POINT TO correct api url for auth
+    // both rootURL and apiURL can be given at spn invocation, it will adjust index.html
     locationType: 'hash',
     EmberENV: {
       FEATURES: {
