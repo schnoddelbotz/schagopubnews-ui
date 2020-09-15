@@ -1,0 +1,19 @@
+<div class="container-fluid">
+	<h1>{{model.length}} articles</h1>
+
+	{{#unless model.length}}
+	<p>Surprisingly, zero articles found. Maybe add one? Click somewhere, somewhen.</p>
+	{{/unless}}
+
+	<ul>
+	{{#each model as |article|}}
+	    <li>
+	    	<p>Article: {{ article }}</p>
+	        <p>{{ article.body }}</p>
+	        <small>{{ article.id }}</small>
+	    </li>
+	{{/each}}
+	</ul>
+</div>
+
+{{outlet}}

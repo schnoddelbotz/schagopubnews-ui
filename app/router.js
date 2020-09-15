@@ -13,4 +13,5 @@ Router.map(function() {
   this.route('dashboard');
   this.route('about');
   this.route('users');
+  this.route('articles');
 });

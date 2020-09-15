@@ -13,6 +13,9 @@ all: dist
 
 yarn-install:
 	docker-compose run --rm ember yarn install
+	# https://github.com/babel/ember-cli-babel/issues/302
+	# docker-compose run --rm ember perl -pi -e 's@500000@4500000@' "./node_modules/@babel/generator/lib/index.js"
+	# docker-compose run --rm ember perl -pi -e 's@compact: .*@compact: true,@' "./node_modules/@babel/generator/lib/index.js"
 	touch yarn-install
 
 yarn-upgrade:

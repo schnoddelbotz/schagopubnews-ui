@@ -7,8 +7,20 @@ var environment = ENV_CONFIG['environment'] || 'development';
 console.log(`ember-cli-build.js: Building for env: ${environment}`);
 
 module.exports = function(defaults) {
+  const webpack = require('webpack');
 
   var config = {
+
+    autoImport: {
+      // https://github.com/ef4/ember-auto-import#customizing-build-behavior
+      webpack: {
+        // https://webpack.js.org/plugins/limit-chunk-count-plugin/
+        plugins: [
+          new webpack.optimize.LimitChunkCountPlugin({maxChunks: 1}),
+        ]
+      }
+    },
+
     'ember-bootstrap': {
       bootstrapVersion: 4,
       importBootstrapCSS: false
