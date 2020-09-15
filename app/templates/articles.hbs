@@ -8,9 +8,9 @@
 	<ul>
 	{{#each model as |article|}}
 	    <li>
-	    	<p>Article: {{ article }}</p>
-	        <p>{{ article.body }}</p>
-	        <small>{{ article.id }}</small>
+	    	<code>Title:</code> <b>{{ article.title }}</b><br/>
+	        <code>Body:</code> <i>{{ article.body }}</i><br/>
+	        <code>ID:</code> <small>{{ article.id }}</small>
 	    </li>
 	{{/each}}
 	</ul>

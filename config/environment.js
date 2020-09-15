@@ -37,25 +37,34 @@ module.exports = function(environment) {
 
     firebase: [
       {
-        apiKey: "AIzaSyAWIMkDzUu4b0nD60BrglQX5Sq0_8hnT5Y",
-        authDomain: "ember-test-69699.firebaseapp.com",
-        databaseURL: "https://ember-test-69699.firebaseio.com",
-        projectId: "ember-test-69699",
-        storageBucket: "ember-test-69699.appspot.com",
-        messagingSenderId: "39112982274",
-        appId: "1:39112982274:web:acf53ad9e778bfd079cc1b",
-        measurementId: "G-YRDCZ1HFCQ"
-      }, {
-        apiKey: "AIzaSyAWIMkDzUu4b0nD60BrglQX5Sq0_8hnT5Y",
-        authDomain: "ember-test-69699.firebaseapp.com",
-        databaseURL: "https://ember-test-69699.firebaseio.com",
-        projectId: "ember-test-69699",
-        storageBucket: "ember-test-69699.appspot.com",
-        messagingSenderId: "39112982274",
-        appId: "1:39112982274:web:acf53ad9e778bfd079cc1b",
-        measurementId: "G-YRDCZ1HFCQ",
-        name: "second-app"
+        apiKey: "AIzaSyAa8fF1Xn8XOTBG1b9MrKxZf6UckoNtBcU",
+        authDomain: "hacker-playground-254920.firebaseapp.com",
+        databaseURL: "https://hacker-playground-254920.firebaseio.com",
+        projectId: "hacker-playground-254920",
+        storageBucket: "hacker-playground-254920.appspot.com",
+        messagingSenderId: "973709391570",
+        appId: "1:973709391570:web:682c051d055e495ea21f0b"
       }
+      // {
+      //   apiKey: "AIzaSyAWIMkDzUu4b0nD60BrglQX5Sq0_8hnT5Y",
+      //   authDomain: "ember-test-69699.firebaseapp.com",
+      //   databaseURL: "https://ember-test-69699.firebaseio.com",
+      //   projectId: "ember-test-69699",
+      //   storageBucket: "ember-test-69699.appspot.com",
+      //   messagingSenderId: "39112982274",
+      //   appId: "1:39112982274:web:acf53ad9e778bfd079cc1b",
+      //   measurementId: "G-YRDCZ1HFCQ"
+      // }, {
+      //   apiKey: "AIzaSyAWIMkDzUu4b0nD60BrglQX5Sq0_8hnT5Y",
+      //   authDomain: "ember-test-69699.firebaseapp.com",
+      //   databaseURL: "https://ember-test-69699.firebaseio.com",
+      //   projectId: "ember-test-69699",
+      //   storageBucket: "ember-test-69699.appspot.com",
+      //   messagingSenderId: "39112982274",
+      //   appId: "1:39112982274:web:acf53ad9e778bfd079cc1b",
+      //   measurementId: "G-YRDCZ1HFCQ",
+      //   name: "second-app"
+      // }
     ],
 
     firestore: {

@@ -10,6 +10,6 @@ export default DS.Model.extend({
     title: attr('string'),
     body: attr('string'),
     publishedAt: attr('date'),
-    author: belongsTo('user'),
-    comments: hasMany('comments', { subcollection: true }),
+    //author: belongsTo('user'),
+    //comments: hasMany('comments', { subcollection: true }),
 });

@@ -11,7 +11,7 @@ Serverless Cms, Headleass Application, (written in) GO, (to) PUBlish news!
 
 - use CFN for initial auth, but then do all DB traffic directly against FireStore!
 - read https://guides.emberjs.com/release/upgrading/current-edition/glimmer-components/
-
+- https://github.com/kaliber5/ember-cli-bundle-analyzer
 
 # done (, ... but)
 
