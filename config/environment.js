@@ -25,6 +25,19 @@ module.exports = function(environment) {
       // when it is created
     },
 
+    // https://auth0.com/blog/create-your-first-ember-2-dot-0-app-from-authentication-to-calling-an-api/#Creating-a-simple-app-that-uses-JWT
+    // needed / used? vs
+    // https://emberigniter.com/real-world-authentication-with-ember-simple-auth/
+    // NO LONGER LIKE BELOW! Now:
+    // https://github.com/simplabs/ember-simple-auth/blob/411c19e2639b1d4c9776647675dd539b1ab788ee/guides/upgrade-to-v3.md
+    // but mixins are not welcome in octane ...
+    // 'simple-auth': {
+    //   //store: 'simple-auth-session-store:local-storage',
+    //   authorizer: 'authorizer:custom',
+    //   crossOriginWhitelist: ['http://localhost:4200/', '*'],
+    //   // routeAfterAuthentication: '/protected' !!!!!!!!!!!!!!!!!!!!!!
+    // },
+
     // FIRESTORE stuff below
     contentSecurityPolicy: {
       'script-src': '\'self\' \'unsafe-eval\'',

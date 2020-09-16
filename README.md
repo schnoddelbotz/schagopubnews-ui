@@ -12,6 +12,7 @@ Serverless Cms, Headleass Application, (written in) GO, (to) PUBlish news!
 - use CFN for initial auth, but then do all DB traffic directly against FireStore!
 - read https://guides.emberjs.com/release/upgrading/current-edition/glimmer-components/
 - https://github.com/kaliber5/ember-cli-bundle-analyzer
+- https://emberobserver.com/addons/ember-keyboard -- ctrl-f --> focus search field? goto articles. dashboard.
 
 # done (, ... but)
 
@@ -30,6 +31,11 @@ Serverless Cms, Headleass Application, (written in) GO, (to) PUBlish news!
 
 - https://www.youtube.com/watch?v=e9LGVn0mnuk
 - https://stackoverflow.com/questions/60843983/does-ember-octane-route-class-support-using-mixins
+
+- https://auth0.com/blog/create-your-first-ember-2-dot-0-app-from-authentication-to-calling-an-api/#Creating-a-simple-app-that-uses-JWT
+- https://github.com/simplabs/ember-simple-auth/blob/411c19e2639b1d4c9776647675dd539b1ab788ee/guides/upgrade-to-v3.md
+
+- fun ahead: https://github.com/firebase/emberfire/issues/614
 
 # setup done so far ...
 

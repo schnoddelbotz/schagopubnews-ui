@@ -21,6 +21,15 @@ module.exports = function(defaults) {
       }
     },
 
+    // https://github.com/firebase/emberfire/issues/605
+    'ember-cli-uglify': {
+      uglify: {
+        mangle: {
+          reserved: ['FirestoreSerializer', 'FirestoreAdapter']
+        }
+      }
+    },
+
     'ember-bootstrap': {
       bootstrapVersion: 4,
       importBootstrapCSS: false
