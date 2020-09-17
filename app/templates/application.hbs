@@ -40,10 +40,10 @@
       </li>
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
-          <a class="nav-link {{if this.collapsedPlanning "collapsed"}}" href="#" data-toggle="collapse" aria-expanded="{{if this.collapsedPlanning false true}}">
+          <span class="nav-link {{if this.collapsedPlanning "collapsed"}}" data-toggle="collapse" aria-expanded="{{if this.collapsedPlanning false true}}">
             {{!-- <FaIcon @icon="table" @prefix="fas" class="fa-fw" /> --}}
             <span onClick={{action "toggleCollapsedPlanning"}}>Issue planning</span>
-          </a>
+          </span>
           <BsCollapse @collapsed={{this.collapsedPlanning}}>
             <div class="bg-white py-2 collapse-inner rounded">
               <h6 class="collapse-header">Planning Utilities</h6>
