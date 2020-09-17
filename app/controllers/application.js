@@ -6,10 +6,16 @@ export default class ApplicationController extends Controller {
     @service session;
 
     sidebarEnabled = true;
+    collapsedPlanning = true;
 
     @action
     logout() {
         this.session.invalidate();
+    }
+
+    @action
+    toggleCollapsedPlanning() {
+        this.set('collapsedPlanning', !this.collapsedPlanning);
     }
 
     @action

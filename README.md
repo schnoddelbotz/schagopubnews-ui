@@ -25,6 +25,11 @@ Serverless Cms, Headleass Application, (written in) GO, (to) PUBlish news!
 
 - colors do not match 100% with original sb2...?
 
+## ideas
+
+- Articles: Always provide direct link to last 5 edited articles. also, make them draggable to... whatever.
+- hotkeys. hotkeys. hotkeys. alt-f - go to search ...
+
 ## auth
 
 - https://firebase.google.com/docs/reference/js/ -> auth

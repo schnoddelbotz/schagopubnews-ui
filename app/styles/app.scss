@@ -54,3 +54,13 @@ html, body { height: 100%; }
   color:#aaa;
 }
 // end x4E custom
+
+// fix sb-admin2 fontawesome 5 ttf usage
+@media (min-width: 768px) {
+  .sidebar .nav-item .nav-link[data-toggle=collapse]::after {
+    content: "-";
+  }
+  .sidebar .nav-item .nav-link[data-toggle=collapse].collapsed::after {
+    content: "v";
+  }
+}
