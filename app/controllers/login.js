@@ -2,10 +2,12 @@ import Controller from '@ember/controller';
 import {inject as service } from '@ember/service';
 import {action } from '@ember/object';
 import config from 'myapp/config/environment';
+import firebase from 'firebase/app';
 
 
 export default class LoginController extends Controller {
     @service session;
+    @service firebaseApp;
 
     @action
     async authenticate() {
@@ -34,16 +36,24 @@ export default class LoginController extends Controller {
           this.transitionToRoute('dashboard');
         }
     }
-
     /*
     @action
-    authenticate() {
-        console.log(`Authenticating against apiURL ${config.apiURL}`);
-        let {identification, password } = this.getProperties('identification', 'password');
-        // https://github.com/firebase/emberfire/issues/579#issuecomment-501888016
-        // const auth = this.get('firebaseApp').auth();
-        // const provider = new firebase.auth.GoogleAuthProvider();
-        // return auth.then(auth => auth.signInWithPopup(provider));
-        ...
+    async authenticate() {
+        const auth = await this.get('firebaseApp').auth();
+        //const provider = new firebase.auth.GoogleAuthProvider();
+        //const provider = new firebase.auth.EmailAuthProvider();
+        var provider = new firebase.auth.OAuthProvider('google.com');
+        provider.addScope('profile');
+        provider.addScope('email');
+        //return auth.signInWithPopup(provider);
+        return auth.signInWithPopup(provider).then(function(result) {
+            // This gives you the OAuth Access Token for that provider.
+            var token = result.credential.accessToken;
+            // The signed-in user info.
+            var user = result.user;
+            console.log(`Login DATA: ${token}, ${user.displayName} (${user.email} -- verified:${user.emailVerified})`);
+            console.log(user);
+        });
+    }
     */
 }

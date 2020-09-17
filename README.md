@@ -27,6 +27,8 @@ Serverless Cms, Headleass Application, (written in) GO, (to) PUBlish news!
 
 ## auth
 
+- https://firebase.google.com/docs/reference/js/ -> auth
+
 ... against cfn. cfn has admin key in env; additional users from firestore collection USERS
 
 - https://www.youtube.com/watch?v=e9LGVn0mnuk
