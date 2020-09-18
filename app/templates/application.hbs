@@ -15,7 +15,6 @@
     <LinkTo @tagName="li" @route="dashboard" class="nav-item">
       <LinkTo @route="dashboard" class="nav-link"><span>Dashboard</span></LinkTo>
     </LinkTo>
-    <!-- Divider -->
     <hr class="sidebar-divider">
 
 
@@ -28,9 +27,9 @@
       <BsCollapse @collapsed={{this.collapsedArticles}}>
         <div class="bg-white py-2 collapse-inner rounded">
           <h6 class="collapse-header">My Articles</h6>
-          <a class="collapse-item" href="#">This Edition</a>
-          {{#link-to 'articles' class="collapse-item"}}All Articles{{/link-to}}
-          <h6 class="collapse-header">This edition</h6>
+          <a class="collapse-item" href="#">In Current Edition</a>
+          {{#link-to 'articles' class="collapse-item"}}All My Articles{{/link-to}}
+          <h6 class="collapse-header">Editorial Office</h6>
           <a class="collapse-item" href="#">To-Do</a>
           <a class="collapse-item" href="#">In Prorgress</a>
           <a class="collapse-item" href="#">Ready</a>
@@ -86,16 +85,15 @@
         </div>
       </BsCollapse>
     </li>
-    <!-- Nav Item - Charts -->
-    <LinkTo @tagName="li" @route="users" class="nav-item">
-      <LinkTo @route="users" class="nav-link"><span>Users</span></LinkTo>
-    </LinkTo>
-    <!-- Nav Item - Tables -->
     <LinkTo @tagName="li" @route="editions" class="nav-item">
       <LinkTo @route="editions" class="nav-link"><span>Products &amp; Editions</span></LinkTo>
     </LinkTo>
     <hr class="sidebar-divider">
 
+    <div class="sidebar-heading">SPN</div>
+    <LinkTo @tagName="li" @route="users" class="nav-item">
+      <LinkTo @route="users" class="nav-link"><span>Manage Users</span></LinkTo>
+    </LinkTo>
     <LinkTo @tagName="li" @route="about" class="nav-item">
       <LinkTo @route="about" class="nav-link"><span>About SPN</span></LinkTo>
     </LinkTo>
