@@ -5,45 +5,53 @@
   <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
     <!-- Sidebar - Brand -->
     {{#link-to 'index' class="sidebar-brand d-flex align-items-center justify-content-center"}}
-    {{!-- <div class="sidebar-brand-icon rotate-n-15"></div> --}}
-    <div class="sidebar-brand-text mx-3"><span class="x4ex">x</span><span class="gray">4E</span> &nbsp; SPN{{!--  <sup>r2020.4</sup> --}}</div>
+    <div class="sidebar-brand-text mx-3"><span class="x4ex">x</span><span class="gray">4E</span></div>
+    <div class="sidebar-brand-icon">SPN</div>
     {{/link-to}}
-    <!-- Divider
+    <!-- Divider, special case after brand/logo: my-0 -->
     <hr class="sidebar-divider my-0">
-    <li class="nav-item active">
-      <LinkTo @route="dashboard" class="nav-link"><span>Dashboard</span></LinkTo>
-    </li>
-    -->
-    <hr class="sidebar-divider">
+
     {{!-- this nested LinkTo is super-ugly, but we need .active class on outer <li>, not the inner <a> --}}
     <LinkTo @tagName="li" @route="dashboard" class="nav-item">
       <LinkTo @route="dashboard" class="nav-link"><span>Dashboard</span></LinkTo>
     </LinkTo>
-
     <!-- Divider -->
     <hr class="sidebar-divider">
-    <!-- Heading -->
-    <div class="sidebar-heading">
-      Newsroom
-    </div>
-    <!-- Nav Item - Pages Collapse Menu -->
+
+
+    <div class="sidebar-heading">Newsroom</div>
+    <!-- Nav Item - Articles Collapse Menu -->
     <li class="nav-item">
       <span class="nav-link {{if this.collapsedArticles "collapsed"}}" data-toggle="collapse" aria-expanded="{{if this.collapsedArticles false true}}">
           <span onClick={{action "toggleCollapsedArticles"}}>Articles</span>
       </span>
       <BsCollapse @collapsed={{this.collapsedArticles}}>
         <div class="bg-white py-2 collapse-inner rounded">
-          <h6 class="collapse-header">My articles</h6>
-          <a class="collapse-item" href="buttons.html">This edition</a>
-          {{#link-to 'articles' class="collapse-item"}}All articles{{/link-to}}
+          <h6 class="collapse-header">My Articles</h6>
+          <a class="collapse-item" href="#">This Edition</a>
+          {{#link-to 'articles' class="collapse-item"}}All Articles{{/link-to}}
           <h6 class="collapse-header">This edition</h6>
-          <a class="collapse-item" href="buttons.html">To-Do</a>
-          <a class="collapse-item" href="buttons.html">In prorgress</a>
-          <a class="collapse-item" href="cards.html">Ready</a>
+          <a class="collapse-item" href="#">To-Do</a>
+          <a class="collapse-item" href="#">In Prorgress</a>
+          <a class="collapse-item" href="#">Ready</a>
         </div>
       </BsCollapse>
     </li>
-    <!-- Nav Item - Utilities Collapse Menu -->
+    <!-- Nav Item - Media Collapse Menu -->
+    <li class="nav-item">
+        <span class="nav-link {{if this.collapsedMedia "collapsed"}}" data-toggle="collapse" aria-expanded="{{if this.collapsedMedia false true}}">
+          <span onClick={{action "toggleCollapsedMedia"}}>Media</span>
+        </span>
+        <BsCollapse @collapsed={{this.collapsedMedia}}>
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Images, ads ...</h6>
+            <a class="collapse-item" href="#">This Edition</a>
+            <a class="collapse-item" href="#">Search</a>
+            <a class="collapse-item" href="#">Upload</a>
+          </div>
+        </BsCollapse>
+    </li>
+    <!-- Nav Item - Planning Collapse Menu -->
     <li class="nav-item">
         <span class="nav-link {{if this.collapsedPlanning "collapsed"}}" data-toggle="collapse" aria-expanded="{{if this.collapsedPlanning false true}}">
           <span onClick={{action "toggleCollapsedPlanning"}}>Issue planning</span>
@@ -52,18 +60,14 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Planning Utilities</h6>
             <a class="collapse-item" href="#">Publication Days</a>
-            <a class="collapse-item" href="#">Plan articles</a>
-            <a class="collapse-item" href="#">Plan ads</a>
+            <a class="collapse-item" href="#">Plan Articles &amp; Media</a>
+            <a class="collapse-item" href="#">Plan Ads</a>
           </div>
         </BsCollapse>
     </li>
-
-    <!-- Divider -->
     <hr class="sidebar-divider">
-    <!-- Heading -->
-    <div class="sidebar-heading">
-      Manage
-    </div>
+
+    <div class="sidebar-heading">Manage</div>
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
       <span class="nav-link {{if this.collapsedProduction "collapsed"}}" data-toggle="collapse" aria-expanded="{{if this.collapsedProduction false true}}">
@@ -77,28 +81,28 @@
           <a class="collapse-item" href="#">Print (LaTeX)</a>
           <div class="collapse-divider"></div>
           <h6 class="collapse-header">Configuration</h6>
-          <a class="collapse-item" href="#">Channel config</a>
-          <a class="collapse-item" href="#">Publishing queueues</a>
+          <a class="collapse-item" href="#">Channel Configuration</a>
+          <a class="collapse-item" href="#">Publishing Queues</a>
         </div>
       </BsCollapse>
     </li>
     <!-- Nav Item - Charts -->
     <LinkTo @tagName="li" @route="users" class="nav-item">
-      <LinkTo @route="dashboard" class="nav-link"><span>Users</span></LinkTo>
+      <LinkTo @route="users" class="nav-link"><span>Users</span></LinkTo>
     </LinkTo>
     <!-- Nav Item - Tables -->
     <LinkTo @tagName="li" @route="editions" class="nav-item">
-      <LinkTo @route="dashboard" class="nav-link"><span>Products &amp; Editions</span></LinkTo>
+      <LinkTo @route="editions" class="nav-link"><span>Products &amp; Editions</span></LinkTo>
     </LinkTo>
-
-    <!-- Divider -->
     <hr class="sidebar-divider">
+
     <LinkTo @tagName="li" @route="about" class="nav-item">
-      <LinkTo @route="dashboard" class="nav-link"><span>About SPN</span></LinkTo>
+      <LinkTo @route="about" class="nav-link"><span>About SPN</span></LinkTo>
     </LinkTo>
 
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
+
     <!-- Sidebar Toggler (Sidebar) -->
     <div class="text-center d-none d-md-inline">
       <FaIcon @icon="sort-up" @rotation={{270}} class="rounded-circle border-0" id="sidebarToggle" {{on "click" this.toggleSidebar}} />

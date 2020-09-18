@@ -9,11 +9,15 @@ export default class ApplicationController extends Controller {
     collapsedPlanning = true;
     collapsedProduction = true;
     collapsedArticles = true;
+    collapsedMedia = true;
 
     @action
     logout() {
         this.session.invalidate();
     }
+
+    // todo: make action with argument?!?!?
+    // also: didInsertElement or such ... or onEnter/afterModel ...: unflod nav-item ul if entring one of those routes (e.g. via link)
 
     @action
     toggleCollapsedPlanning() {
@@ -28,6 +32,11 @@ export default class ApplicationController extends Controller {
     @action
     toggleCollapsedArticles() {
         this.set('collapsedArticles', !this.collapsedArticles);
+    }
+
+    @action
+    toggleCollapsedMedia() {
+        this.set('collapsedMedia', !this.collapsedMedia);
     }
 
     @action
