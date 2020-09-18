@@ -7,6 +7,8 @@ export default class ApplicationController extends Controller {
 
     sidebarEnabled = true;
     collapsedPlanning = true;
+    collapsedProduction = true;
+    collapsedArticles = true;
 
     @action
     logout() {
@@ -16,6 +18,16 @@ export default class ApplicationController extends Controller {
     @action
     toggleCollapsedPlanning() {
         this.set('collapsedPlanning', !this.collapsedPlanning);
+    }
+
+    @action
+    toggleCollapsedProduction() {
+        this.set('collapsedProduction', !this.collapsedProduction);
+    }
+
+    @action
+    toggleCollapsedArticles() {
+        this.set('collapsedArticles', !this.collapsedArticles);
     }
 
     @action

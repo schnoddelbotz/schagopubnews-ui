@@ -14,4 +14,5 @@ Router.map(function() {
   this.route('about');
   this.route('users');
   this.route('articles');
+  this.route('editions');
 });
