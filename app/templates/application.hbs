@@ -76,12 +76,13 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Output channels</h6>
             <a class="collapse-item" href="#">Web (Hugo)</a>
-            <a class="collapse-item" href="#">Print (InDesign)</a>
-            <a class="collapse-item" href="#">Print (LaTeX)</a>
+            <a class="collapse-item" href="#">Print (InDesign)</a> {{!-- just display status here for production overview --}}
+            <a class="collapse-item" href="#">Print (LaTeX)</a> {{!-- basic page setup, language, ... base template. --}}
             <div class="collapse-divider"></div>
-            <h6 class="collapse-header">Configuration</h6>
+            <h6 class="collapse-header">Setup</h6>
+            <a class="collapse-item" href="#">Output Templates</a> {{!-- to be stored in bucket, referenced in firestore. sale on packs! :)  --}}
             <a class="collapse-item" href="#">Channel Configuration</a>
-            <a class="collapse-item" href="#">Publishing Queues</a>
+            <a class="collapse-item" href="#">Publishing Queues</a> {{!-- setup timers and triggers to auto-publish stuff --}}
           </div>
         </BsCollapse>
       </li>
