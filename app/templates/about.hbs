@@ -1,15 +1,29 @@
 <div class="container-fluid">
 	<h1 class="h3 mb-4 text-gray-800">About SPN</h1>
 	<p>SPN is the leading headless CMS in the 21st century, at least it might be.</p>
-	<TuiEditor
-	  @height="auto"
-	  @minHeight="300px"
-	  @previewStyle={{this.previewStyle}}
-	  @editType={{this.editType}}
-	  @toolbarItems={{this.toolbarItems}}
-	  @value={{this.value}}
-	  @onChange={{fn (mut this.value)}}/>
+	<p><code>This is SPN version ... something</code></p>
+	<p>
+		SPN is Copyright &copy; x4E 2020<br/>
+		Principal Engineer: Jan A. Hacker<br/>
+		All rights reserved.<br/>
+	</p>
+	<h2>Third party Open-Source components</h2>
+	SPN is built on top of giants, namely, in list of relevance for enabling SPIN as it is:
+	<ul>
+		<li>EmberJS - enabling this SPA rich UI experience</li>
+		<li>Go - providing the base for our serverless CloudFunction code</li>
+		<li>Google Cloud Libraries</li>
+		<li>sb-admin2</li>
+		<li>Many EmberJS plugins, especially</li>
+		<ul>
+			<li>ember-bootstrap</li>
+			<li>ember-firestore</li>
+			<li>...</li>
+		</ul>
+	</ul>
+	... and of course, the Google Cloud Platform.
 
+	<p>The complete list of libraries used is available here: tbd.</p>
 </div>
 
 {{outlet}}

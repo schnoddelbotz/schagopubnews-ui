@@ -68,3 +68,9 @@ span.nav-link, span.dropdown-item {
   cursor: pointer;
   user-select: none;
 }
+
+// slightly slimmer footer than original sb-admin2
+footer.sticky-footer {
+  padding: 0.8rem 0;
+}
+
