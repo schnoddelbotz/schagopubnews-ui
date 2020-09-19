@@ -29,6 +29,7 @@ Serverless Cms, Headleass Application, (written in) GO, (to) PUBlish news!
 
 - Articles: Always provide direct link to last 5 edited articles. also, make them draggable to... whatever.
 - hotkeys. hotkeys. hotkeys. alt-f - go to search ...
+- keep track of last 5 edited articles, add to sidebar as hotlink
 
 ## auth
 

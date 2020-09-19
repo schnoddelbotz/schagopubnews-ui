@@ -27,6 +27,7 @@
         <BsCollapse @collapsed={{this.collapsedArticles}}>
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">My Articles</h6>
+            {{#link-to 'article.new' class="collapse-item"}}New Article{{/link-to}}
             <a class="collapse-item" href="#">In Current Edition</a>
             {{#link-to 'articles' class="collapse-item"}}All My Articles{{/link-to}}
             <h6 class="collapse-header">Editorial Office</h6>

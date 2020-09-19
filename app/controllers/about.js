@@ -17,16 +17,10 @@ export default class AboutController extends Controller {
           'divider',
           'ul',
           'ol',
-          // 'task',
           'indent',
           'outdent',
           'divider',
           'table',
-          // 'image',
-          // 'link',
-          // 'divider',
-          // 'code',
-          // 'codeblock',
           'divider',
     ];
 }

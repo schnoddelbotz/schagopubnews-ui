@@ -8,9 +8,13 @@
 	<ul>
 	{{#each model as |article|}}
 	    <li>
-	    	<code>Title:</code> <b>{{ article.title }}</b><br/>
-	        <code>Body:</code> <i>{{ article.body }}</i><br/>
-	        <code>ID:</code> <small>{{ article.id }}</small>
+	    	<LinkTo @route="article.edit" @model={{article}}><FaIcon @icon="edit" class="fa-sm fa-fw mr-2 text-gray-400" />Edit</LinkTo>
+	    	<LinkTo @route="article.show" @model={{article}}><FaIcon @icon="eye" class="fa-sm fa-fw mr-2 text-gray-400" />Show</LinkTo>
+	    	<LinkTo @route="article.show" @model={{article}}><b>{{ article.title }}</b></LinkTo>
+	    	<br/>
+	        <code>Published:</code> <i>{{ article.publishedAt }}</i>
+	        <br/>
+	        <code>Excerpt:</code> <i>{{ excerpt article.body }}</i>
 	    </li>
 	{{/each}}
 	</ul>

@@ -9,7 +9,7 @@ const { attr, belongsTo, hasMany } = DS;
 export default DS.Model.extend({
     title: attr('string'),
     body: attr('string'),
-    publishedAt: attr('date'),
+    publishedAt: attr('string'), // FIXME should be date
     //author: belongsTo('user'),
     //comments: hasMany('comments', { subcollection: true }),
 });

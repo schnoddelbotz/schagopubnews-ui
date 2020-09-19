@@ -1,0 +1,12 @@
+<div class="container-fluid">
+	<h1 class="h3 mb-4 text-gray-800">Edit article: {{this.model.title}}</h1>
+	<p>Let's have a save button ... edition chooser ... media links ... NOT inside content but as meta data.</p>
+	<TuiEditor
+	  @height="auto"
+	  @minHeight="500px"
+	  @previewStyle={{this.previewStyle}}
+	  @editType={{this.editType}}
+	  @toolbarItems={{this.toolbarItems}}
+	  @value={{this.model.body}}
+	  @onChange={{fn (mut this.model.body)}}/>
+</div>
