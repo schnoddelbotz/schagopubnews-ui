@@ -64,7 +64,7 @@ html, body { height: 100%; }
     content: "v";
   }
 }
-span.nav-link {
+span.nav-link, span.dropdown-item {
   cursor: pointer;
   user-select: none;
 }

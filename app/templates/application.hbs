@@ -2,301 +2,223 @@
 <div id="wrapper" class="h-100">
   <!-- Sidebar -->
   {{#if session.isAuthenticated}}
-  <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-    <!-- Sidebar - Brand -->
-    {{#link-to 'index' class="sidebar-brand d-flex align-items-center justify-content-center"}}
-    <div class="sidebar-brand-text mx-3"><span class="x4ex">x</span><span class="gray">4E</span></div>
-    <div class="sidebar-brand-icon">SPN</div>
-    {{/link-to}}
-    <!-- Divider, special case after brand/logo: my-0 -->
-    <hr class="sidebar-divider my-0">
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+      <!-- Sidebar - Brand -->
+      {{#link-to 'index' class="sidebar-brand d-flex align-items-center justify-content-center"}}
+      <div class="sidebar-brand-text mx-3"><span class="x4ex">x</span><span class="gray">4E</span></div>
+      <div class="sidebar-brand-icon">SPN</div>
+      {{/link-to}}
+      <!-- Divider, special case after brand/logo: my-0 -->
+      <hr class="sidebar-divider my-0">
 
-    {{!-- this nested LinkTo is super-ugly, but we need .active class on outer <li>, not the inner <a> --}}
-    <LinkTo @tagName="li" @route="dashboard" class="nav-item">
-      <LinkTo @route="dashboard" class="nav-link"><span>Dashboard</span></LinkTo>
-    </LinkTo>
-    <hr class="sidebar-divider">
+      {{!-- this nested LinkTo is super-ugly, but we need .active class on outer <li>, not the inner <a> --}}
+      <LinkTo @tagName="li" @route="dashboard" class="nav-item">
+        <LinkTo @route="dashboard" class="nav-link"><span>Dashboard</span></LinkTo>
+      </LinkTo>
+      <hr class="sidebar-divider">
 
 
-    <div class="sidebar-heading">Newsroom</div>
-    <!-- Nav Item - Articles Collapse Menu -->
-    <li class="nav-item">
-      <span class="nav-link {{if this.collapsedArticles "collapsed"}}" data-toggle="collapse" aria-expanded="{{if this.collapsedArticles false true}}">
-          <span onClick={{action "toggleCollapsedArticles"}}>Articles</span>
-      </span>
-      <BsCollapse @collapsed={{this.collapsedArticles}}>
-        <div class="bg-white py-2 collapse-inner rounded">
-          <h6 class="collapse-header">My Articles</h6>
-          <a class="collapse-item" href="#">In Current Edition</a>
-          {{#link-to 'articles' class="collapse-item"}}All My Articles{{/link-to}}
-          <h6 class="collapse-header">Editorial Office</h6>
-          <a class="collapse-item" href="#">To-Do</a>
-          <a class="collapse-item" href="#">In Prorgress</a>
-          <a class="collapse-item" href="#">Ready</a>
-        </div>
-      </BsCollapse>
-    </li>
-    <!-- Nav Item - Media Collapse Menu -->
-    <li class="nav-item">
-        <span class="nav-link {{if this.collapsedMedia "collapsed"}}" data-toggle="collapse" aria-expanded="{{if this.collapsedMedia false true}}">
-          <span onClick={{action "toggleCollapsedMedia"}}>Media</span>
+      <div class="sidebar-heading">Newsroom</div>
+      <!-- Nav Item - Articles Collapse Menu -->
+      <li class="nav-item">
+        <span class="nav-link {{if this.collapsedArticles "collapsed"}}" data-toggle="collapse" aria-expanded="{{if this.collapsedArticles false true}}">
+            <span onClick={{action "toggleCollapsedArticles"}}>Articles</span>
         </span>
-        <BsCollapse @collapsed={{this.collapsedMedia}}>
+        <BsCollapse @collapsed={{this.collapsedArticles}}>
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Images, ads ...</h6>
-            <a class="collapse-item" href="#">This Edition</a>
-            <a class="collapse-item" href="#">Search</a>
-            <a class="collapse-item" href="#">Upload</a>
+            <h6 class="collapse-header">My Articles</h6>
+            <a class="collapse-item" href="#">In Current Edition</a>
+            {{#link-to 'articles' class="collapse-item"}}All My Articles{{/link-to}}
+            <h6 class="collapse-header">Editorial Office</h6>
+            <a class="collapse-item" href="#">To-Do</a>
+            <a class="collapse-item" href="#">In Prorgress</a>
+            <a class="collapse-item" href="#">Ready</a>
           </div>
         </BsCollapse>
-    </li>
-    <!-- Nav Item - Planning Collapse Menu -->
-    <li class="nav-item">
-        <span class="nav-link {{if this.collapsedPlanning "collapsed"}}" data-toggle="collapse" aria-expanded="{{if this.collapsedPlanning false true}}">
-          <span onClick={{action "toggleCollapsedPlanning"}}>Issue planning</span>
+      </li>
+      <!-- Nav Item - Media Collapse Menu -->
+      <li class="nav-item">
+          <span class="nav-link {{if this.collapsedMedia "collapsed"}}" data-toggle="collapse" aria-expanded="{{if this.collapsedMedia false true}}">
+            <span onClick={{action "toggleCollapsedMedia"}}>Media</span>
+          </span>
+          <BsCollapse @collapsed={{this.collapsedMedia}}>
+            <div class="bg-white py-2 collapse-inner rounded">
+              <h6 class="collapse-header">Images, ads ...</h6>
+              <a class="collapse-item" href="#">This Edition</a>
+              <a class="collapse-item" href="#">Search</a>
+              <a class="collapse-item" href="#">Upload</a>
+            </div>
+          </BsCollapse>
+      </li>
+      <!-- Nav Item - Planning Collapse Menu -->
+      <li class="nav-item">
+          <span class="nav-link {{if this.collapsedPlanning "collapsed"}}" data-toggle="collapse" aria-expanded="{{if this.collapsedPlanning false true}}">
+            <span onClick={{action "toggleCollapsedPlanning"}}>Issue planning</span>
+          </span>
+          <BsCollapse @collapsed={{this.collapsedPlanning}}>
+            <div class="bg-white py-2 collapse-inner rounded">
+              <h6 class="collapse-header">Planning Utilities</h6>
+              <a class="collapse-item" href="#">Publication Days</a>
+              <a class="collapse-item" href="#">Plan Articles &amp; Media</a>
+              <a class="collapse-item" href="#">Plan Ads</a>
+            </div>
+          </BsCollapse>
+      </li>
+      <hr class="sidebar-divider">
+
+      <div class="sidebar-heading">Manage</div>
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item">
+        <span class="nav-link {{if this.collapsedProduction "collapsed"}}" data-toggle="collapse" aria-expanded="{{if this.collapsedProduction false true}}">
+          <span onClick={{action "toggleCollapsedProduction"}}>Production</span>
         </span>
-        <BsCollapse @collapsed={{this.collapsedPlanning}}>
+        <BsCollapse @collapsed={{this.collapsedProduction}}>
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Planning Utilities</h6>
-            <a class="collapse-item" href="#">Publication Days</a>
-            <a class="collapse-item" href="#">Plan Articles &amp; Media</a>
-            <a class="collapse-item" href="#">Plan Ads</a>
+            <h6 class="collapse-header">Output channels</h6>
+            <a class="collapse-item" href="#">Web (Hugo)</a>
+            <a class="collapse-item" href="#">Print (InDesign)</a>
+            <a class="collapse-item" href="#">Print (LaTeX)</a>
+            <div class="collapse-divider"></div>
+            <h6 class="collapse-header">Configuration</h6>
+            <a class="collapse-item" href="#">Channel Configuration</a>
+            <a class="collapse-item" href="#">Publishing Queues</a>
           </div>
         </BsCollapse>
-    </li>
-    <hr class="sidebar-divider">
+      </li>
+      <LinkTo @tagName="li" @route="editions" class="nav-item">
+        <LinkTo @route="editions" class="nav-link"><span>Products &amp; Editions</span></LinkTo>
+      </LinkTo>
+      <hr class="sidebar-divider">
 
-    <div class="sidebar-heading">Manage</div>
-    <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item">
-      <span class="nav-link {{if this.collapsedProduction "collapsed"}}" data-toggle="collapse" aria-expanded="{{if this.collapsedProduction false true}}">
-        <span onClick={{action "toggleCollapsedProduction"}}>Production</span>
-      </span>
-      <BsCollapse @collapsed={{this.collapsedProduction}}>
-        <div class="bg-white py-2 collapse-inner rounded">
-          <h6 class="collapse-header">Output channels</h6>
-          <a class="collapse-item" href="#">Web (Hugo)</a>
-          <a class="collapse-item" href="#">Print (InDesign)</a>
-          <a class="collapse-item" href="#">Print (LaTeX)</a>
-          <div class="collapse-divider"></div>
-          <h6 class="collapse-header">Configuration</h6>
-          <a class="collapse-item" href="#">Channel Configuration</a>
-          <a class="collapse-item" href="#">Publishing Queues</a>
-        </div>
-      </BsCollapse>
-    </li>
-    <LinkTo @tagName="li" @route="editions" class="nav-item">
-      <LinkTo @route="editions" class="nav-link"><span>Products &amp; Editions</span></LinkTo>
-    </LinkTo>
-    <hr class="sidebar-divider">
+      <div class="sidebar-heading">SPN</div>
+      <LinkTo @tagName="li" @route="users" class="nav-item">
+        <LinkTo @route="users" class="nav-link"><span>Manage Users</span></LinkTo>
+      </LinkTo>
+      <LinkTo @tagName="li" @route="about" class="nav-item">
+        <LinkTo @route="about" class="nav-link"><span>About SPN</span></LinkTo>
+      </LinkTo>
 
-    <div class="sidebar-heading">SPN</div>
-    <LinkTo @tagName="li" @route="users" class="nav-item">
-      <LinkTo @route="users" class="nav-link"><span>Manage Users</span></LinkTo>
-    </LinkTo>
-    <LinkTo @tagName="li" @route="about" class="nav-item">
-      <LinkTo @route="about" class="nav-link"><span>About SPN</span></LinkTo>
-    </LinkTo>
+      <!-- Divider -->
+      <hr class="sidebar-divider d-none d-md-block">
 
-    <!-- Divider -->
-    <hr class="sidebar-divider d-none d-md-block">
-
-    <!-- Sidebar Toggler (Sidebar) -->
-    <div class="text-center d-none d-md-inline">
-      <FaIcon @icon="sort-up" @rotation={{270}} class="rounded-circle border-0" id="sidebarToggle" {{on "click" this.toggleSidebar}} />
-    </div>
-  </ul>
+      <!-- Sidebar Toggler (Sidebar) -->
+      <div class="text-center d-none d-md-inline">
+        <FaIcon @icon="sort-up" @rotation={{270}} class="rounded-circle border-0" id="sidebarToggle" {{on "click" this.toggleSidebar}} />
+      </div>
+    </ul>
   {{/if}}
   <!-- End of Sidebar -->
 
   <!-- Content Wrapper -->
   <div id="content-wrapper" class="d-flex flex-column">
+
     <!-- Main Content -->
     <div id="content">
+
       <!-- Topbar -->
       {{#if session.isAuthenticated}}
-      <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-        <!-- Sidebar Toggle (Topbar) -->
-        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-        {{!-- <i class="fa fa-bars"></i> --}}
-        <FaIcon @icon="bars" />
-        </button>
-        <!-- Topbar Search -->
-        <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-          <div class="input-group">
-            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-            <div class="input-group-append">
-              <button class="btn btn-primary" type="button">
-              <FaIcon @icon="search" class="fa-sm" />
-              </button>
+        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+          <!-- Sidebar Toggle (Topbar) -->
+          <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+          {{!-- <i class="fa fa-bars"></i> --}}
+          <FaIcon @icon="bars" />
+          </button>
+          <!-- Topbar Search (Visible Only >XS) -->
+          <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+            <div class="input-group">
+              <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+              <div class="input-group-append">
+                <button class="btn btn-primary" type="button">
+                <FaIcon @icon="search" class="fa-sm" />
+                </button>
+              </div>
             </div>
-          </div>
-        </form>
-        <!-- Topbar Navbar -->
-        <ul class="navbar-nav ml-auto">
-          <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-          <li class="nav-item dropdown no-arrow d-sm-none">
-            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="fas fa-search fa-fw"></i>
-            </a>
-            <!-- Dropdown - Messages -->
-            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
-              <form class="form-inline mr-auto w-100 navbar-search">
-                <div class="input-group">
-                  <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-                  <div class="input-group-append">
-                    <button class="btn btn-primary" type="button">
-                    <i class="fas fa-search fa-sm"></i>
-                    </button>
+          </form>
+
+          <!-- Topbar Navbar -->
+          <ul class="navbar-nav ml-auto">
+            <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+            <BsDropdown @tagName="li" class="nav-item dropdown no-arrow d-sm-none" as |dd|>
+              <dd.toggle class="nav-link dropdown-toggle">
+                <FaIcon @icon="search" />
+              </dd.toggle>
+              <dd.menu class="dropdown-menu dropdown-menu-right shadow" as |ddm|>
+                <form class="form-inline mr-auto w-100 navbar-search">
+                  <div class="input-group">
+                    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                      <button class="btn btn-primary" type="button">
+                      <FaIcon @icon="search" />
+                      </button>
+                    </div>
                   </div>
-                </div>
-              </form>
-            </div>
-          </li>
-          <!-- Nav Item - Alerts -->
-          <li class="nav-item dropdown no-arrow mx-1">
-            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <FaIcon @icon="bell" class="fa-fw" />
-              <!-- Counter - Alerts -->
-              <span class="badge badge-danger badge-counter">3+</span>
-            </a>
-            <!-- Dropdown - Alerts -->
-            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
-              <h6 class="dropdown-header">
-              Alerts Center
-              </h6>
-              <a class="dropdown-item d-flex align-items-center" href="#">
-                <div class="mr-3">
-                  <div class="icon-circle bg-primary">
-                    <i class="fas fa-file-alt text-white"></i>
-                  </div>
-                </div>
-                <div>
-                  <div class="small text-gray-500">December 12, 2019</div>
-                  <span class="font-weight-bold">A new monthly report is ready to download!</span>
-                </div>
-              </a>
-              <a class="dropdown-item d-flex align-items-center" href="#">
-                <div class="mr-3">
-                  <div class="icon-circle bg-success">
-                    <i class="fas fa-donate text-white"></i>
-                  </div>
-                </div>
-                <div>
-                  <div class="small text-gray-500">December 7, 2019</div>
-                  $290.29 has been deposited into your account!
-                </div>
-              </a>
-              <a class="dropdown-item d-flex align-items-center" href="#">
-                <div class="mr-3">
-                  <div class="icon-circle bg-warning">
-                    <FaIcon @icon="exclamation-triangle" class="text-red" />
-                  </div>
-                </div>
-                <div>
-                  <div class="small text-gray-500">December 2, 2019</div>
-                  Spending Alert: We've noticed unusually high spending for your account.
-                </div>
-              </a>
-              <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
-            </div>
-          </li>
-          <!-- Nav Item - Messages -->
-          <li class="nav-item dropdown no-arrow mx-1">
-            <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <FaIcon @icon="envelope" class="fa-fw" />
-              <!-- Counter - Messages -->
-              <span class="badge badge-danger badge-counter">7</span>
-            </a>
-            <!-- Dropdown - Messages -->
-            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
-              <h6 class="dropdown-header">
-              Message Center
-              </h6>
-              <a class="dropdown-item d-flex align-items-center" href="#">
-                <div class="dropdown-list-image mr-3">
-                  {{!-- <img class="rounded-circle" src="https://source.unsplash.com/fn_BT9fwg_E/60x60" alt=""> --}}
-                  <div class="status-indicator bg-success"></div>
-                </div>
-                <div class="font-weight-bold">
-                  <div class="text-truncate">Hi there! I am wondering if you can help me with a problem I've been having.</div>
-                  <div class="small text-gray-500">Emily Fowler · 58m</div>
-                </div>
-              </a>
-              <a class="dropdown-item d-flex align-items-center" href="#">
-                <div class="dropdown-list-image mr-3">
-                  {{!-- <img class="rounded-circle" src="https://source.unsplash.com/AU4VPcFN4LE/60x60" alt=""> --}}
-                  <div class="status-indicator"></div>
-                </div>
-                <div>
-                  <div class="text-truncate">I have the photos that you ordered last month, how would you like them sent to you?</div>
-                  <div class="small text-gray-500">Jae Chun · 1d</div>
-                </div>
-              </a>
-              <a class="dropdown-item d-flex align-items-center" href="#">
-                <div class="dropdown-list-image mr-3">
-                  {{!-- <img class="rounded-circle" src="https://source.unsplash.com/CS2uCrpNzJY/60x60" alt=""> --}}
-                  <div class="status-indicator bg-warning"></div>
-                </div>
-                <div>
-                  <div class="text-truncate">Last month's report looks great, I am very happy with the progress so far, keep up the good work!</div>
-                  <div class="small text-gray-500">Morgan Alvarez · 2d</div>
-                </div>
-              </a>
-              <a class="dropdown-item d-flex align-items-center" href="#">
-                <div class="dropdown-list-image mr-3">
-                  {{!-- <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" alt=""> --}}
-                  <div class="status-indicator bg-success"></div>
-                </div>
-                <div>
-                  <div class="text-truncate">Am I a good boy? The reason I ask is because someone told me that people say this to all dogs, even if they aren't good...</div>
-                  <div class="small text-gray-500">Chicken the Dog · 2w</div>
-                </div>
-              </a>
-              <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
-            </div>
-          </li>
-          <div class="topbar-divider d-none d-sm-block"></div>
-          <!-- Nav Item - User Information -->
-          <li class="nav-item dropdown no-arrow">
-            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <span class="mr-2 d-none d-lg-inline text-gray-600 small" {{action 'logout'}}>J. Hacker</span>
-              <img {{action 'logout'}} class="img-profile rounded-circle" src="https://hacker.ch/jan.png">
-            </a>
-            <!-- Dropdown - User Information -->
-            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-              <a class="dropdown-item" href="#">
-                <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                Profile
-              </a>
-              <a class="dropdown-item" href="#">
-                <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                Settings
-              </a>
-              <a class="dropdown-item" href="#">
-                <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                Activity Log
-              </a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                Logout
-              </a>
-            </div>
-          </li>
-        </ul>
-      </nav>
+                </form>
+              </dd.menu>
+            </BsDropdown>
+
+            <!-- Nav Item - Alerts -->
+            <BsDropdown @tagName="li" class="nav-item dropdown no-arrow mx-1" as |dd|>
+              <dd.toggle class="nav-link dropdown-toggle">
+                <FaIcon @icon="bell" class="fa-fw" />
+                <span class="badge badge-danger badge-counter">9+</span>
+              </dd.toggle>
+              <dd.menu class="dropdown-list dropdown-menu dropdown-menu-right shadow" as |ddm|>
+                <h6 class="dropdown-header">
+                Alerts Center
+                </h6>
+                <ddm.item>
+                  <ddm.linkTo @route="index">3 Planning Alerts</ddm.linkTo>
+                </ddm.item>
+                <ddm.item>
+                  <ddm.linkTo @route="index">0 Production Alerts</ddm.linkTo>
+                </ddm.item>
+                <ddm.item>
+                  <ddm.linkTo @route="index">8 System Messages</ddm.linkTo>
+                </ddm.item>
+                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+              </dd.menu>
+            </BsDropdown>
+
+            <div class="topbar-divider d-none d-sm-block"></div>
+
+            <!-- Nav Item - User Profile/Settings/Logs/Logout -->
+            <BsDropdown @tagName="li" class="nav-item dropdown no-arrow" as |dd|>
+              <dd.toggle class="nav-link dropdown-toggle">
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">J. Hacker</span>
+                <img class="img-profile rounded-circle" src="https://hacker.ch/jan.png">
+              </dd.toggle>
+              <dd.menu class="dropdown-menu-right shadow" as |ddm|>
+                <ddm.item>
+                  <ddm.linkTo @route="index"><FaIcon @icon="user" class="fa-sm fa-fw mr-2 text-gray-400" /> Profile</ddm.linkTo>
+                </ddm.item>
+                <ddm.item>
+                  <ddm.linkTo @route="index"><FaIcon @icon="cogs" class="fa-sm fa-fw mr-2 text-gray-400" /> Settings</ddm.linkTo>
+                </ddm.item>
+                <ddm.item>
+                  <ddm.linkTo @route="index"><FaIcon @icon="list" class="fa-sm fa-fw mr-2 text-gray-400" /> Activity Log</ddm.linkTo>
+                </ddm.item>
+                <div class="dropdown-divider"></div>
+                <ddm.item>
+                  <span class="dropdown-item" {{action 'logout'}}><FaIcon @icon="sign-out-alt" class="fa-sm fa-fw mr-2 text-gray-400" /> Logout</span>
+                </ddm.item>
+              </dd.menu>
+            </BsDropdown>
+          </ul>
+        </nav>
       {{else}}
-      <div class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-        <h1 class="navbar-brand"><span class="text-gray-500"><span class="x4ex">x</span>4E</span> SPN</h1>
-      </div>
+        <div class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+          <h1 class="navbar-brand"><span class="text-gray-500"><span class="x4ex">x</span>4E</span> SPN</h1>
+        </div>
       {{/if}}
       <!-- End of Topbar -->
+
       <!-- Begin Page Content -->
       {{outlet}}
       <!-- End of Page Content -->
+
     </div>
     <!-- End of Main Content -->
+
     <!-- Footer -->
     <footer class="sticky-footer bg-white">
       <div class="container my-auto">
@@ -306,10 +228,13 @@
       </div>
     </footer>
     <!-- End of Footer -->
+
   </div>
   <!-- End of Content Wrapper -->
+
 </div>
 <!-- End of Page Wrapper -->
+
 <!-- Scroll to Top Button-->
 <a class="scroll-to-top rounded" href="#page-top">
   {{!-- <i class="fas fa-angle-up"></i> --}}
