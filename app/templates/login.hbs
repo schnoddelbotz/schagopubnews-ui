@@ -3,6 +3,7 @@
     <div class="col-sm-8 col-lg-4" id="loginContainer">
       {{#if session.isAuthenticated}}
       You are signed in. Enjoy!
+      {{!-- All redirects in place SHOULD ensure no user ever sees this. --}}
       {{else}}
       <form id="loginForm" {{action 'authenticate' on='submit'}}>
         <div class="form-group">
@@ -18,17 +19,26 @@
           </label>
         </div>
         <div class="form-group justify-content-end">
-          <button type="submit" class="btn btn-primary">Login</button>
+          <button type="submit" class="btn btn-primary" disabled={{this.isLoading}}>
+            {{#if this.isLoading}}
+              <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span> please wait ...
+            {{else}}
+              Login
+            {{/if}}
+          </button>
         </div>
-        {{#if errorMessage}}
-        <div class="text-center">
-          <strong>ERROR</strong>
-          <div class="error mx-auto text-sm" data-text={{errorMessage}}>{{errorMessage}}</div>
-          <p class="lead text-gray-800 mb-5">¯\\_(ツ)_/¯ Maybe retry?</p>
-          <p class="text-gray-500 mb-0">Follow links below to resolve persisting login issues</p>
-          <a href="index.html">Forgot password</a> | <a href="index.html">Contact support</a>
-        </div>
-        {{/if}}
+
+        {{#unless this.isLoading}}
+          {{#if errorMessage}}
+          <div class="text-center">
+            <strong>ERROR</strong>
+            <div class="error mx-auto text-sm" data-text={{errorMessage}}>{{errorMessage}}</div>
+            <p class="lead text-gray-800 mb-5">¯\\_(ツ)_/¯ Maybe retry?</p>
+            <p class="text-gray-500 mb-0">Follow links below to resolve persisting login issues</p>
+            <a href="index.html">Forgot password</a> | <a href="index.html">Contact support</a>
+          </div>
+          {{/if}}
+        {{/unless}}
       </form>
       {{/if}}
     </div>

@@ -3,18 +3,27 @@ import {inject as service } from '@ember/service';
 import {action } from '@ember/object';
 import config from 'myapp/config/environment';
 import firebase from 'firebase/app';
+import { tracked } from '@glimmer/tracking';
+
 
 
 export default class LoginController extends Controller {
     @service session;
     @service firebaseApp;
 
+    // https://guides.emberjs.com/release/upgrading/current-edition/tracked-properties/
+    // use @tracked instead of computed properties. no more this.set('foo'), just foo = ... !
+    @tracked isLoading = false;
+
     @action
     async authenticate() {
         let { identification, password } = this;
         try {
-          await this.session.authenticate('authenticator:oauth2', identification, password);
+            this.isLoading = true;
+            await this.session.authenticate('authenticator:oauth2', identification, password);
+            this.isLoading = false;
         } catch(reason) {
+            this.isLoading = false;
             document.getElementById("loginContainer").classList.add("shaky");
             setTimeout(function(){
                 let el=document.getElementById("loginContainer");
